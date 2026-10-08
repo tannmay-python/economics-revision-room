@@ -6,8 +6,8 @@ A static Class XII Economics study site: 12 Macro chapters and the six uploaded 
 
 ## Included
 
-- 194 concept lessons (85 Macro + 109 IED) with key concepts from the supplied textbook and boxes.
-- 401 original practice questions: 146 MCQs, 46 numericals and 209 theory/application questions.
+- 226 concept lessons (117 Macro + 109 IED) with key concepts from the supplied textbook and boxes.
+- 446 original practice questions: 146 MCQs, 46 numericals and 254 theory/application questions.
 - MCQ checking, worked answers, chapter/type/search filters, sets of 20 questions and ten-question sprints.
 - Browser-local progress; no account, analytics or external runtime dependencies.
 

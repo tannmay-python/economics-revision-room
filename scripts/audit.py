@@ -36,3 +36,28 @@ for chapter,terms in coverage.items():
 assert 'Sources & coverage' not in (dist/'app.js').read_text()
 assert all(c.get('flow') for c in d['chapters'])
 print('PASS: IED topic/box coverage, complete-topic practice and study navigation')
+# The introductory point lists must never collapse back into a summary paragraph.
+macro={c['id']:c for c in d['chapters'] if c['subject']=='macro'}
+scope=next(l for l in macro['1']['lessons'] if l['title'].startswith('Scope of macroeconomics:'))
+significance=next(l for l in macro['1']['lessons'] if l['title'].startswith('Significance of macroeconomics:'))
+assert len(scope['blocks'])==7 and len(significance['blocks'])==7
+assert all(len(b['text'].split())>=20 for b in scope['blocks'][1:]+significance['blocks'][1:])
+required={
+ '1':['Description of the Economy','Roadmap for Business Decisions','Policy Formulation','Global Economic Issues','Environmental Pollution and Sustainable Development','Structural Changes and Growth Path'],
+ '2':['Significance: Estimation','Intersectoral Interdependence','Depreciation Reserve Fund','Desired inventory'],
+ '3':['Distribution of Income','Composition of GDP','Non-monetary Exchanges','Externalities'],
+ '4':['Self-consumption','Imputed Rent','Windfall','Financial-asset'],
+ '5':['Dynamic Functions','High-powered Money','Minimum Reserve','CBDC'],
+ '6':['Issuer of Currency','Lender of Last Resort','Moral Suasion','Repo 4','OMO 2'],
+ '7':['Psychological Law','Saving to Consumption','Undefined Ratios'],
+ '8':['Stocks','Ex-post Identity'],
+ '9':['Reduction in Private Consumption','Increase in Private Investment','Undesired Stocks','Static GDP','Wage–Price Spiral'],
+ '10':['Escheat','Special Assessment','Crowding-out','Non-plan'],
+ '11':['Fixed exchange rate: all five merits','Fixed exchange rate: all five demerits','Flexible exchange rate: all five merits','Flexible exchange rate: all five demerits'],
+ '12':['Market Potential','Net Factor Income from Abroad','Cross-border Prejudices']}
+for ch,terms in required.items():
+ text=' '.join(l['body']+' '+l['title'] for l in macro[ch]['lessons']).lower()
+ for term in terms:assert term.lower() in text,(ch,term)
+q=next(q for q in d['questions'] if q['id']=='q124')
+assert 'Roadmap for Business Decisions' in q['solution'] and 'Theory of Employment' in q['solution']
+print('PASS: Macro point lists, explanations and restored scope/significance answer')
