@@ -9,6 +9,7 @@ A static Class XII Economics study site: 12 Macro chapters and the six uploaded 
 - 226 concept lessons (117 Macro + 109 IED) with key concepts from the supplied textbook and boxes.
 - 446 original practice questions: 146 MCQs, 46 numericals and 254 theory/application questions.
 - MCQ checking, worked answers, chapter/type/search filters, sets of 20 questions and ten-question sprints.
+- Light/dark mode with a saved preference and device-theme default.
 - Browser-local progress; no account, analytics or external runtime dependencies.
 
 IED covers the pre-independence economy, 1950–1990, reforms, human capital, rural development and employment. Environment/sustainable development and the India–China–Pakistan comparison were not supplied as chapters and are not included. Historical statistics retain their textbook context.
