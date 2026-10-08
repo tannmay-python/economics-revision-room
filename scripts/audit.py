@@ -21,5 +21,5 @@ for q in d['questions']:
   assert isinstance(q['answer'],int) and 0<=q['answer']<4 and q['explanation']
  else:assert q['solution']
 for asset in re.findall(r'(?:src|href)="([^"]+)"',(dist/'index.html').read_text()):
- if not asset.startswith(('http','data:','#')):assert (dist/asset).is_file(),asset
+ if not asset.startswith(('http','data:','#')):assert (dist/asset.split('?')[0]).is_file(),asset
 print('PASS:',len(chapters),'chapters;',sum(len(c['lessons']) for c in d['chapters']),'lessons;',len(ids),'questions;',dict(collections.Counter(q['type'] for q in d['questions'])))
