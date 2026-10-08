@@ -1,19 +1,19 @@
 # Economics revision room
 
-A static Class XII Economics study site: 12 Macro chapters and the six uploaded IED chapters. Short explanations, key points, recall cards, 14 exam diagram models, CBSE-style practice.
+A static Class XII Economics study site: 12 Macro chapters and the six uploaded IED chapters. Structured explanations, coloured study boxes, comparisons, chapter flows, recall cards, 14 exam diagram models, CBSE-style practice.
 
 **Live site:** https://tannmay-python.github.io/economics-revision-room/
 
 ## Included
 
-- 150 concept lessons with key concepts from the supplied textbook and boxes.
-- 357 original practice questions: 146 MCQs, 46 numericals and 165 theory/application questions.
+- 194 concept lessons (85 Macro + 109 IED) with key concepts from the supplied textbook and boxes.
+- 401 original practice questions: 146 MCQs, 46 numericals and 209 theory/application questions.
 - MCQ checking, worked answers, chapter/type/search filters, sets of 20 questions and ten-question sprints.
 - Browser-local progress; no account, analytics or external runtime dependencies.
 
 IED covers the pre-independence economy, 1950–1990, reforms, human capital, rural development and employment. Environment/sustainable development and the India–China–Pakistan comparison were not supplied as chapters and are not included. Historical statistics retain their textbook context.
 
-Practice formats were informed by official CBSE sample papers and marking schemes linked in the site's Sources & coverage section. Practice questions and mark targets are original, not official questions or predictions.
+Practice formats were informed by official CBSE sample papers and marking schemes reviewed during authoring. Practice questions and mark targets are original, not official questions or predictions.
 
 ## Run and deploy
 

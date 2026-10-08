@@ -23,3 +23,16 @@ for q in d['questions']:
 for asset in re.findall(r'(?:src|href)="([^"]+)"',(dist/'index.html').read_text()):
  if not asset.startswith(('http','data:','#')):assert (dist/asset.split('?')[0]).is_file(),asset
 print('PASS:',len(chapters),'chapters;',sum(len(c['lessons']) for c in d['chapters']),'lessons;',len(ids),'questions;',dict(collections.Counter(q['type'] for q in d['questions'])))
+# Regression checks for restored substantive sections and box concepts.
+coverage=json.loads((root/'scripts/ied-coverage.json').read_text())
+for chapter,terms in coverage.items():
+ c=next(c for c in d['chapters'] if c['id']==chapter)
+ text=' '.join(l['body']+' '+l['title']+' '+l['textbookHeading'] for l in c['lessons']).lower()
+ for term in terms:assert term.lower() in text,(chapter,'missing coverage',term)
+ assert len(text.split())>1000,(chapter,'unexpectedly abridged')
+ for l in c['lessons']:
+  assert l.get('key')
+  assert any(q['id']=='ied-review-'+chapter[1:]+'-'+l['key'] for q in d['questions'])
+assert 'Sources & coverage' not in (dist/'app.js').read_text()
+assert all(c.get('flow') for c in d['chapters'])
+print('PASS: IED topic/box coverage, complete-topic practice and study navigation')
