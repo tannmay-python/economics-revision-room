@@ -53,3 +53,10 @@ html[data-theme="dark"] .diagram [fill="#efe9f7"],html[data-theme="dark"] .diagr
 html[data-theme="dark"] .diagram [fill="#e8f3ed"]{fill:#20362c}
 @media(max-width:650px){.top-actions{gap:6px}.theme-toggle{font-size:11px;padding:6px 9px}.topbar{flex-wrap:wrap}.top-actions{margin-left:auto}.sprint-button{white-space:nowrap}}
 @media print{html[data-theme="dark"]{color-scheme:light;--paper:white;--surface:white;--body:#333;--ink:#111;--ink-2:#222;--muted:#555}html[data-theme="dark"] :is(.card,.lesson-card,.study-block,.formula,.study-comparison thead,.study-comparison tbody th,.answer,figure,.exam-stage,.exam-svg){background:white!important;color:#111!important}html[data-theme="dark"] .study-block :is(h4,p){color:#111!important}html[data-theme="dark"] :is(.diagram,.exam-svg) text{fill:#222}html[data-theme="dark"] :is(.diagram,.exam-svg) [stroke]{stroke:#555}}
+
+/* One continuous numbered sequence for Macro answer points. */
+.study-list{margin:4px 0 12px!important;padding:0 20px 0 48px!important;border:1px solid var(--line-2);border-radius:10px;background:var(--paper);list-style:decimal outside}
+.study-list>li{display:list-item;padding:17px 0 17px 8px;margin:0;border-bottom:1px solid var(--line);line-height:1.75;break-inside:avoid}
+.study-list>li:last-child{border-bottom:0}.study-list>li::marker{color:var(--green-text);font-weight:700;font-variant-numeric:tabular-nums}
+.study-list h4,.study-prose h4{font:650 15px/1.5 Inter,system-ui,sans-serif;color:var(--ink);margin:0 0 6px}.study-list p{margin:0!important;font-size:14px;line-height:1.8}.study-list p+p{margin-top:8px!important}.study-prose p{margin:4px 0 12px}.macro-body>.study-block{margin:0}.answer .study-list p{white-space:normal}
+@media(max-width:760px){.study-list{padding-left:36px!important;padding-right:14px!important}.study-list>li{padding-left:4px}.study-list h4{font-size:14px}}
